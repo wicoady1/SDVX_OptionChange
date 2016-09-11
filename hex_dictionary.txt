@@ -1,0 +1,40 @@
+Navigator Hex pos:
+
+0x0027FB88 0x0027FB89
+
+Default 		8C 0B
+Rasis Battle	50 0A
+Kureha			94 09
+Nianoa			34 09
+Rasis Yukata	CC 08
+Kanade			50 08
+Rasis Mizugi	10 07
+Meu				A0 06
+Reimu			90 05
+Rasis Bug		9C 04
+Left Tsumabuki	B8 0A
+Right Tsumabuki	24 0B
+Maxima			F8 09
+
+-------------------
+
+Safe Mode Hex pos:
+
+0x001424D6 0x001424D7
+
+Yes 		B0 01
+No			32 C0
+
+--------------------
+Premium Free Hex Pos: --> Infinite Loop mode --> perlu safe mode aktif kalo mau real Infinite Loop
+Default
+0x0017CA4F   				00
+0x0017CAD6 - 0x0017CADB  	8B 83 78 0A 00 00
+0x00249C4A - 0x00249C4D 	00 00 00 00
+0x00249C50 - 0x00249C5F		00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+						
+Modified
+0x0017CA4F   				02
+0x0017CAD6 - 0x0017CADB		E9 6F D1 0C 00 90
+0x00249C4A - 0x00249C4D		C7 83 78 0A
+0x00249C50 - 0x00249C5F		01 00 00 00 8B 83 78 0A 00 00 E9 7D 2E F3 FF 00

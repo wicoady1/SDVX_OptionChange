@@ -1,0 +1,13 @@
+c:\users\kennard\documents\visual studio 2015\Projects\SDVX_OptionChange\SDVX_OptionChange\bin\Debug\SDVX_OptionChange.exe.config
+c:\users\kennard\documents\visual studio 2015\Projects\SDVX_OptionChange\SDVX_OptionChange\bin\Debug\SDVX_OptionChange.exe
+c:\users\kennard\documents\visual studio 2015\Projects\SDVX_OptionChange\SDVX_OptionChange\bin\Debug\SDVX_OptionChange.pdb
+c:\users\kennard\documents\visual studio 2015\Projects\SDVX_OptionChange\SDVX_OptionChange\obj\Debug\SDVX_OptionChange.csprojResolveAssemblyReference.cache
+c:\users\kennard\documents\visual studio 2015\Projects\SDVX_OptionChange\SDVX_OptionChange\obj\Debug\SDVX_OptionChange.frmSDVXOption.resources
+c:\users\kennard\documents\visual studio 2015\Projects\SDVX_OptionChange\SDVX_OptionChange\obj\Debug\SDVX_OptionChange.Properties.Resources.resources
+c:\users\kennard\documents\visual studio 2015\Projects\SDVX_OptionChange\SDVX_OptionChange\obj\Debug\SDVX_OptionChange.csproj.GenerateResource.Cache
+c:\users\kennard\documents\visual studio 2015\Projects\SDVX_OptionChange\SDVX_OptionChange\obj\Debug\SDVX_OptionChange.exe
+c:\users\kennard\documents\visual studio 2015\Projects\SDVX_OptionChange\SDVX_OptionChange\obj\Debug\SDVX_OptionChange.pdb
+c:\users\kennard\documents\visual studio 2015\Projects\SDVX_OptionChange\SDVX_OptionChange\bin\Debug\SDVX_OptionChange.exe.manifest
+c:\users\kennard\documents\visual studio 2015\Projects\SDVX_OptionChange\SDVX_OptionChange\bin\Debug\SDVX_OptionChange.application
+c:\users\kennard\documents\visual studio 2015\Projects\SDVX_OptionChange\SDVX_OptionChange\obj\Debug\SDVX_OptionChange.exe.manifest
+c:\users\kennard\documents\visual studio 2015\Projects\SDVX_OptionChange\SDVX_OptionChange\obj\Debug\SDVX_OptionChange.application
