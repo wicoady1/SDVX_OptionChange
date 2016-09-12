@@ -12,6 +12,8 @@ namespace SDVX_OptionChange.Functions
         DataTable NavigatorDataSource { get;  set; }
         int NavigatorSelect { get; set; }
         bool AllStageSafe { get; set; }
+        bool ForceEventMode { get; set; }
+        bool AllDifficultyUnlock { get; set; }
         bool PremFree { get; set; }
         
     }

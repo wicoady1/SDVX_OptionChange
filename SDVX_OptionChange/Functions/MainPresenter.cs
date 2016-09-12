@@ -117,6 +117,40 @@ namespace SDVX_OptionChange.Functions
 
                     CheckAllStageSafe(result);
 
+                    //------------------------ for Force Event Mode -------------------------------
+                    result = "";
+                    readBinary.BaseStream.Position = 0x0015B3E2;
+                    while (readBinary.BaseStream.Position < 0x0015B3E3)
+                    {
+                        inbyte = readBinary.ReadByte();
+                        //outbyte = Convert.ToString(inbyte);
+                        outbyte = string.Format("{0:X2}", inbyte);
+                        result += outbyte + " ";
+                    }
+
+                    //result = string.Format("{0:X2}", outbyte);
+                    result = result.TrimEnd(' ');
+                    //MessageBox.Show(result);
+
+                    CheckForceEventMode(result);
+
+                    //------------------------ for All Difficulty Unlock -------------------------------
+                    result = "";
+                    readBinary.BaseStream.Position = 0x0012CD65;
+                    while (readBinary.BaseStream.Position < 0x0012CD69)
+                    {
+                        inbyte = readBinary.ReadByte();
+                        //outbyte = Convert.ToString(inbyte);
+                        outbyte = string.Format("{0:X2}", inbyte);
+                        result += outbyte + " ";
+                    }
+
+                    //result = string.Format("{0:X2}", outbyte);
+                    result = result.TrimEnd(' ');
+                    //MessageBox.Show(result);
+
+                    CheckAllDifficultyUnlock(result);
+
                     //------------------------ for Navigator -------------------------------
                     result = "";
                     readBinary.BaseStream.Position = 0x0027FB88;
@@ -171,6 +205,30 @@ namespace SDVX_OptionChange.Functions
             }
         }
 
+        private void CheckForceEventMode(string strLoadVal)
+        {
+            if (strLoadVal == "01")
+            {
+                _iMain.ForceEventMode = true;
+            }
+            else
+            {
+                _iMain.ForceEventMode = false;
+            }
+        }
+
+        private void CheckAllDifficultyUnlock(string strLoadVal)
+        {
+            if (strLoadVal == "B8 0B 00 00")
+            {
+                _iMain.AllDifficultyUnlock = true;
+            }
+            else
+            {
+                _iMain.AllDifficultyUnlock = false;
+            }
+        }
+
         private void CheckNavigator(string strLoadVal)
         {
             byte intHex1 = Convert.ToByte(strLoadVal.Substring(0, 2), 16);
@@ -206,6 +264,8 @@ namespace SDVX_OptionChange.Functions
                 WriteAllStageSafe(_iMain.AllStageSafe);
                 WriteNavigator(_iMain.NavigatorDataSource, _iMain.NavigatorSelect);
                 WritePremFree(_iMain.PremFree);
+                WriteForceEventMode(_iMain.ForceEventMode);
+                WriteAllDifficultyUnlock(_iMain.AllDifficultyUnlock);
 
                 MessageBox.Show("Applied Successful");
             }
@@ -236,6 +296,64 @@ namespace SDVX_OptionChange.Functions
 
                     stream.Position = 0x001424D7;
                     stream.WriteByte(0xC0);
+                }
+            }
+        }
+
+        private void WriteForceEventMode(bool boolInput)
+        {
+            string path = @"soundvoltex.dll";
+
+            using (var stream = new FileStream(path, FileMode.Open, FileAccess.ReadWrite))
+            {
+                if (boolInput == true)
+                {
+                    
+                    stream.Position = 0x0015B3E2;
+                    stream.WriteByte(0x01);
+                }
+                if (boolInput == false)
+                {
+
+                    stream.Position = 0x0015B3E2;
+                    stream.WriteByte(0x00);
+                }
+            }
+        }
+
+        private void WriteAllDifficultyUnlock(bool boolInput)
+        {
+            string path = @"soundvoltex.dll";
+
+            using (var stream = new FileStream(path, FileMode.Open, FileAccess.ReadWrite))
+            {
+                if (boolInput == true)
+                {
+                    stream.Position = 0x0012CD65;
+                    stream.WriteByte(0xB8);
+
+                    stream.Position = 0x0012CD66;
+                    stream.WriteByte(0x0B);
+
+                    stream.Position = 0x0012CD67;
+                    stream.WriteByte(0x00);
+
+                    stream.Position = 0x0012CD68;
+                    stream.WriteByte(0x00);
+                }
+                if (boolInput == false)
+                {
+                    stream.Position = 0x0012CD65;
+                    stream.WriteByte(0xE8);
+
+                    stream.Position = 0x0012CD66;
+                    stream.WriteByte(0x56);
+
+                    stream.Position = 0x0012CD67;
+                    stream.WriteByte(0x8B);
+
+                    stream.Position = 0x0012CD68;
+                    stream.WriteByte(0x01);
                 }
             }
         }

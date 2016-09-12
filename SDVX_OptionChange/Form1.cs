@@ -77,6 +77,30 @@ namespace SDVX_OptionChange
             }
         }
 
+        public bool ForceEventMode
+        {
+            get
+            {
+                return chkEventMode.Checked;
+            }
+            set
+            {
+                chkEventMode.Checked = value;
+            }
+        }
+
+        public bool AllDifficultyUnlock
+        {
+            get
+            {
+                return chkDiffUnlock.Checked;
+            }
+            set
+            {
+                chkDiffUnlock.Checked = value;
+            }
+        }
+
         public bool PremFree
         {
             get
